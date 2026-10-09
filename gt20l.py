@@ -34,7 +34,7 @@ class gt20l:
   def get_gb2312_font(self,gb):
     BaseAdd=0
     if gb[0] ==0xA9 and gb[1] >=0xA1:
-      addr=(282+(LSB-0xA1))*32+BaseAdd
+      addr=(282+(gb[1]-0xA1))*32+BaseAdd
     elif gb[0] >=0xA1 and gb[0] <= 0xA3 and gb[1] >=0xA1:
       addr=((gb[0]-0xA1)*94+(gb[1]-0xA1))*32+BaseAdd;
     elif gb[0] >=0xB0 and gb[0] <= 0xF7 and gb[1] >=0xA1:
